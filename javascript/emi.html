@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        #lblAmount {
+            border:1px solid black;
+            width: 100px;
+            height: 30px;
+            padding: 2px;
+            text-align: center;
+        }
+        #lblYears {
+            border:1px solid black;
+            width: 50px;
+            height: 30px;
+            padding: 2px;
+            text-align: center;
+        }
+        #lblRate {
+            border:1px solid black;
+            width: 50px;
+            height: 30px;
+            padding: 2px;
+            text-align: center;
+        }
+        input[type="range"] {
+            width: 150px;
+        }
+        .result {
+            background-color: lightgray;
+            margin-top: 100px;
+            height: 100px;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function AmountChange(){
+            var amount = document.getElementById("rangeAmount").value;
+            document.getElementById("lblAmount").innerHTML = `&#8377; ${amount}`;
+        }
+        function YearChange(){
+            var year = document.getElementById("rangeYears").value;
+            document.getElementById("lblYears").innerHTML = year;
+        }
+        function InterestChange(){
+            var rate = document.getElementById("rangeRate").value;
+            document.getElementById("lblRate").innerHTML = rate;
+        }
+        function CalculateClick(){
+            var p = parseFloat(document.getElementById("rangeAmount").value);
+            var n = parseInt(document.getElementById("rangeYears").value) * 12;
+            var r = parseFloat(document.getElementById("rangeRate").value)/12/100;
+            var emi =  p * r / (1- (Math.pow(1/(1 + r), n)));
+            document.getElementById("result").innerHTML = `Your Monthly EMI will be <b><font size="6">&#8377; ${Math.round(emi)}</font></b> per month <a href="https://www.hdfcbank.com">Apply for Loan</a>`;
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="border border-3 p-3 border-dark mt-3">
+        <h1 class="text-center">Personal Loan EMI Calculator</h1>
+        <div class="row mt-4">
+            <div class="col input-group">
+                <label class="me-3">Amount you need </label> <div id="lblAmount"></div>
+            </div>
+            <div class="col input-group">
+                <label class="me-3">for</label> <div id="lblYears"></div> <label class="ms-3">years</label>
+            </div>
+            <div class="col input-group">
+                <label class="me-3">Interest rate</label> <div id="lblRate"></div> <label class="ms-3">%</label>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col input-group">
+                <label class="me-3">&#8377; 50,000</label>
+                <input onchange="AmountChange()" id="rangeAmount" type="range" min="50000" value="50000" max="5000000" class="form-range">
+                <label class="ms-3">&#8377; 50,00,000</label>
+            </div>
+            <div class="col input-group">
+                <label class="me-3">1</label>
+                <input onchange="YearChange()" id="rangeYears" type="range" min="1" max="5" value="1" class="form-range">
+                <label class="ms-3">5</label>
+            </div>
+            <div class="col input-group">
+                <label class="me-3">10.5%</label>
+                <input onchange="InterestChange()" id="rangeRate" type="range" min="10.5" max="21.0" value="10.5" step="0.1" class="form-range">
+                <label class="ms-3">21%</label>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <button onclick="CalculateClick()" class="btn btn-primary">Calcualte</button>
+            </div>
+        </div>
+    </div>
+    <div class="result">
+        <p id="result"></p>
+    </div>
+</body>
+</html>

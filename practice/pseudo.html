@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+ /* .userName:required + span,.{
+    color:red;
+    display:inline-block;
+ } */
+
+
+.userName:valid+span{
+    display:none;
+}
+ .userName:required+span{
+    color:red;
+ }
+ .mobile{
+     background-color:bisque;
+    }
+.mobile:valid +div{
+       display:none;
+    }
+.mobile:invalid{
+    background-color:red;
+}
+
+.mobile:invalid +div{
+    display:block;
+
+}
+.age:in-range + div{
+    display : none;
+}
+.age:out-of-range +div{
+    display:block;
+}
+</style>
+<body>
+    <div class="con1">
+        <dl>
+            <dt>User Name:</dt>
+            <dd><input type="text" class ="userName" required><span>*</span></dd> 
+            <dt>Mobile:</dt>
+            <dd><input type="text" class="mobile" pattern="\+91\d{10}">  <div>Invalid mobile number!</div></dd>
+          
+            <dt>Age</dt>
+            <dd><input type="number" class="age" min="15"><div>age should be greater than 15!</div></dd>
+            
+
+        </dl>
+
+    </div>
+</body>
+</html>

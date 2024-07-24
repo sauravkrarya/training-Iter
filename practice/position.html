@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>positions</title>
+</head>
+<style>
+    .container{
+        width:90%;
+        height:100vh;
+        margin:auto;
+        border:2px solid red;
+        display:flex;
+        flex-wrap:wrap;
+        /* justify-content: center; */
+        /* align-items: center; */
+    }
+    .box{
+        border:2px solid blue;
+        height:50px;
+        width:50px;
+        /* margin:auto; */
+        padding:5px;
+        
+    }
+    #box1{
+        transition:2s;
+        transform: rotate(0deg);
+    }
+    #box1:hover{
+        transition:2s;
+        transform:rotate(-360deg);
+    }
+    .kf>img{
+        width:100px;
+    }
+    body{
+        overflow: hidden;
+
+    }
+    @keyframes zoom{
+        from{
+            width:5px;
+            height:5px;
+            transform:rotate(360deg);
+            margin-left:50px;
+
+        }
+        to{
+            width:5px;
+            height:5px;
+            transform:rotate(0deg);
+            margin-left:0px;
+
+        }
+    }
+    img{
+        animation-name:zoom;
+        animation-duration:5s;
+        animation-iteration-count: infinite;
+        animation-direction:alternate;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box" id="box1">box1</div>
+        <div class="box" id="box2">box2</div>
+        <div class="box" id="box3">box3</div>
+        <div class="box" id="box4">box4</div>
+        <div class="box" id="box5">box5</div>
+        <div class="box" id="box6">box6</div>
+        <div class="box" id="box7">box7</div>
+        <div class="box" id="box8">box8</div>
+    </div>
+    <div class="kf">
+        <img src="images/iphone img.jpg" alt="  ">
+    </div>
+
+</body>
+</html>

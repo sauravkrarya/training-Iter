@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d cube</title>
+</head>
+
+<style>
+    body{
+        color:white;
+    }
+    .side{
+        /* text-align:center; */
+        width:400px;
+        font-size: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #main{
+        width:400px;
+        height:400px;
+        margin:200px auto;
+        perspective: 800px;
+    }
+    #boxSides{
+        width:400px;
+        transform-style: preserve-3d;
+        animation:rotate 7s linear infinite;
+        position:relative;
+        
+        /* animation-name:move; */
+
+        
+    }
+    #boxSides div{
+        position:absolute;
+        width:400px;
+        height:400px;
+        opacity:0.5
+        /* border:2px solid black; */
+
+    }
+    #front{
+        transform: translateZ(200px);
+        background:rgb(55, 139, 187);
+    }
+    #back{
+        transform:rotateY(180deg) translateZ(200px);
+        background:#004d99;
+    }
+    #left{
+        transform:rotateY(-90deg) translateX(-200px);
+        transform-origin: left;
+        background:rgb(92, 195, 255);
+
+        
+    }
+    #right{
+        transform:rotateY(90deg) translateX(200px);
+        transform-origin: right;
+        background:#004d99;
+
+    }
+    #top{
+        transform:rotateX(-90deg) translateY(-200px);
+        transform-origin: top;
+        background:rgb(55, 139, 187);
+
+    }
+    #bottom{
+        transform:rotateX(90deg) translateY(200px);
+        transform-origin: bottom;
+        background:#004d99;
+    } 
+    @keyframes rotate{
+        0%{transform:rotateY(0);}
+        100%{transform:rotateY(360deg);}
+    }
+</style>
+<body>
+    <div id="main">
+
+        <div id="boxSides">
+            <div class="side" id="front">1</div>
+            <div class="side" id="back">3</div>
+            <div class="side" id="left">2</div>
+            <div class="side" id="right">4</div>
+            <div class="side" id="top">5</div>
+            <div class="side" id="bottom">6</div>
+
+        </div>
+    </div>
+</body>
+</html>

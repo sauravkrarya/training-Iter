@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+#name{
+    margin:20px;
+
+    width: 200px;
+    border:2px solid;
+    box-shadow:5px 10px 10px blue;
+}
+.username:checked{
+
+}
+button:disabled{
+    cursor:not-allowed;
+
+}
+.term+span{}
+
+</style>
+<body>
+    <form action="">
+        <label for="name">name</label>
+        <input type="text" id="name" placeholder="Enter name"> 
+        <br>
+        Gender:
+        <label for="male">male</label>
+        <input type="checkbox"id="male">
+        <label for="female">female</label>
+        <input type="checkbox" id="female">
+        <br>
+        Date of birth:
+        <input type="date">
+        <br>
+        branch:
+        <select name="" id="">
+            <option value="">mca</option>
+            <option value="">btech</option>
+            <option value="">msc</option>
+        </select>
+        <br>
+        <label for="number">number</label>
+        <input type="number" id="number">
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+.text-formatting-tag{
+    background-color: rgb(209, 198, 198);
+}
+
+.link-&-image{
+    background-color: rgb(53, 219, 15);
+}
+
+.list-tag{
+    background-color:bisque
+}
+
+.form-tag{
+    background-color: beige;
+}
+
+
+.multimedia-tag{
+    background-color:brown;
+}
+
+
+.semantic-tag{
+   background-color:blueviolet
+}
+
+
+
+.table-tag{
+    background-color: rgb(255, 128, 0);
+}
+
+.form-tag{
+    background-color: rgb(161, 133, 133);
+    border:0px;
+
+}
+
+.form2{
+    background-color: rgb(0, 255, 42);
+}
+
+
+.iframe-tag{
+    background-color: blue;
+}

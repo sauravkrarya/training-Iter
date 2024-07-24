@@ -1,0 +1,9 @@
+body{
+    background-color:rgb(167, 220, 255);
+}
+h1{
+    color:blue;
+}
+p{
+    font-size: 1.em;
+}
